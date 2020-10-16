@@ -98,13 +98,14 @@ class Planet:
 
     def forces(self, planets):
         """
-        Calculate the sum of forces on ths planet du to the other given planets
+        Calculate the sum of forces on ths planet due to the other planets.
 
         Args:
-            planets: A list of Planet objects
+            planets: A list of Planet objects.
         
         Returns:
-            A (2,) array with the total forces on the X and Y axis of the planet
+            An array of shape (2,) with the total forces on the X and Y axis of
+            the planet.
         """
         forces = []
         for p in planets:
@@ -113,7 +114,7 @@ class Planet:
             r_unit = r/d # unit vector
             F = (r_unit * G * self.m * p.m) / np.power(d, 2) # Newtons
             forces.append(F)
-        return np.sum(forces, axis=0)
+        return np.sum(forces, axis=0) # Total sum of forces on each axis
     
 
     def get_state(self):
@@ -162,7 +163,7 @@ def main():
         'Mars',
         x=p1.x + EARTH_MARS_DISTANCE/50,
         y=p1.y + EARTH_MARS_DISTANCE/50,
-        vx=-INITIAL_VELOCITY,
+        vx=-1.5*INITIAL_VELOCITY,
         vy=0,
         m=MARS_MASS,
         color=COLORS['red']
