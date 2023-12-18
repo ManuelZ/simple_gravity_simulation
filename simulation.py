@@ -27,8 +27,6 @@ from config import (
 
 random.seed(42)
 
-MIN = 999999
-MAX = -float("inf")
 # Total number of seconds to simulate
 t_sim = 50 * 365 * 24 * 3600 # seconds
 
